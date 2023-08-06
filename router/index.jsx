@@ -6,6 +6,7 @@ import Login from "../screens/Login";
 import Footer from "../components/Footer";
 
 import { navigationRef } from "./RootNavigation";
+import Robot from "../screens/Robot";
 
 const Stack = createNativeStackNavigator();
 export default function Index() {
@@ -25,6 +26,9 @@ export default function Index() {
         </Stack.Group>
         <Stack.Group>
           <Stack.Screen name="home" component={Home} />
+        </Stack.Group>
+        <Stack.Group>
+          <Stack.Screen name="robot" component={Robot} />
         </Stack.Group>
       </Stack.Navigator>
       <Footer />
