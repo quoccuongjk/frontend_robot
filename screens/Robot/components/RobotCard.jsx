@@ -28,7 +28,8 @@ export default function ProductCard({}) {
       </View>
       <View
         style={{
-          marginLeft: 20,
+          alignItems:'center',
+          justifyContent:'center',
         }}
       >
         <Text style={{ fontWeight: 800, fontSize: 14 }}>Title</Text>
