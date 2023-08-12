@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import { defaultStyles, colors } from "../../styles/styles";
 import MenuTab from "./components/MenuTab";
 import ProductCard from "./components/ProductCard";
+
 import { FontAwesome } from '@expo/vector-icons';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -25,13 +27,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   
+  
 });
+
+import MultiSlider from "@ptomasroos/react-native-multi-slider";
+
+
+
 
 export default class Home extends Component {
   state = {
     modalVisible: false,
   };
-
+  
   setModalVisible = visible => {
     this.setState({ modalVisible: visible });
   };
@@ -74,6 +82,148 @@ export default class Home extends Component {
                     <Text style={{ marginRight: 5, fontSize: 20 }}>FILTERS</Text>
                     <FontAwesome name="sliders" size={32}  />
                   </View>
+                </View>
+                <View 
+                style={{
+                  padding:30
+                }}
+                >
+                  <Text>Khu vực</Text>
+                  <View 
+                  style={{
+                    flexDirection:'row',
+                    flexWrap:'wrap'
+                  }}>
+                    <View style={{
+                      height:50,
+                      width:'30%',
+                      margin:5,
+                      alignItems:'center',
+                      justifyContent:'center',
+                      backgroundColor:colors.primary
+                    }}>
+                      <Text>Khu A</Text>
+                    </View>
+                    <View style={{
+                      height:50,
+                      width:'30%',
+                      margin:5,
+                      alignItems:'center',
+                      justifyContent:'center',
+                      backgroundColor:colors.primary
+                    }}>
+                      <Text>Khu B</Text>
+                    </View>
+                    <View style={{
+                      height:50,
+                      width:'30%',
+                      margin:5,
+                      alignItems:'center',
+                      justifyContent:'center',
+                      backgroundColor:colors.primary
+                    }}>
+                      <Text>Khu C</Text>
+                    </View>
+                  </View>
+                </View>
+                <View 
+                  style={{
+                    padding:30
+                }}>
+                  <Text>Chiều cao</Text>
+                  <MultiSlider 
+                  values={[3,7]}
+                  
+                  min={0}
+                  max={10}
+                  step={1}
+                  markerOffsetY={20}
+                  selectedStyle ={{
+                    backgroundColor: colors.primary
+                  }}
+                  trackStyle={{
+                    height:20,
+                    borderRadius:10,
+                    backgroundColor:colors.secondary
+                  }}
+                  minMarkerOverlapDistance ={50}
+                  customMarker={(e)=> {
+                    return(
+                      <View
+                      style={{
+                        height:60,
+                        alignItems:'center',
+                        justifyContent: 'center'
+                      }}>
+                        <View style={{
+                          height:30,
+                          width:30,
+                          borderRadius:15,
+                          borderWidth:4,
+                          borderColor:'white',
+                          backgroundColor:colors.primary,
+                          
+                        }}/>
+                        <Text>
+                          {e.currentValue} m
+                        </Text>
+
+                    </View>
+                    )
+                    
+                  }}
+                  onValuesChange={(values) => console.log(values)}
+                  />
+                </View>
+
+                <View 
+                  style={{
+                    padding:30
+                }}>
+                  <Text>Bán kính</Text>
+                  <MultiSlider 
+                  values={[3,7]}
+                  
+                  min={0}
+                  max={10}
+                  step={1}
+                  markerOffsetY={20}
+                  selectedStyle ={{
+                    backgroundColor: colors.primary
+                  }}
+                  trackStyle={{
+                    height:20,
+                    borderRadius:10,
+                    backgroundColor:colors.secondary
+                  }}
+                  minMarkerOverlapDistance ={50}
+                  customMarker={(e)=> {
+                    return(
+                      <View
+                      style={{
+                        height:60,
+                        alignItems:'center',
+                        justifyContent: 'center'
+                      }}>
+                        <View style={{
+                          height:30,
+                          width:30,
+                          borderRadius:15,
+                          borderWidth:4,
+                          borderColor:'white',
+                          backgroundColor:colors.primary,
+                          
+                        }}/>
+                        <Text>
+                          {e.currentValue} m
+                        </Text>
+
+                    </View>
+                    )
+                    
+                  }}
+                  onValuesChange={(values) => console.log(values)}
+                  />
                 </View>
                
   
